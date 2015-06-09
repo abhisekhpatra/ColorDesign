@@ -274,8 +274,8 @@ drawChart2(DefaultColors);
 
 
 function drawChart1(myColor){
-    var color= d3.scale.linear()
-        .domain(d3.range(0,30))
+    var color= d3.scale.ordinal()
+        .domain([1,2,3,4,5])
         .range(myColor);
 //console.log(color.range());
     var bar= svg1.selectAll("rect")

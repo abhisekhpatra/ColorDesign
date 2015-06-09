@@ -397,13 +397,8 @@ function createJSON() {
   };
 }); 
     jsonObj.push(UserDetails);
-    console.log(jsonObj);
-    
-    var json=JSON.parse(JSON.stringify(jsonObj));
-  var csv= JSON2CSV(json);
-  console.log(JSON.stringify(jsonObj));
-    blob = new Blob([csv], { type: 'text/csv' }); 
-    saveAs(blob, "data.csv");
+ 
+    window.localStorage.setItem('jsonObj', JSON.stringify(jsonObj));
   
 }   
 
