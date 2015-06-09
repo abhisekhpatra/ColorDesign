@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script>
+    <script src="http://eligrey.com/demos/FileSaver.js/Blob.js"></script>
+    <script src="http://eligrey.com/demos/FileSaver.js/FileSaver.js"></script>
+    <script src="jsonToCSV.js"></script> 
+    <script src="saveSvgasPng.js"></script> 
+  </head>
+  <body>
+    <script type="text/javascript">
+    
+ColorData= [];
+d3.xml("Bar_Category_Negative.svg", "image/svg+xml", function(xml) {
+    //console.log(xml.documentElement);
+  document.body.appendChild(xml.documentElement);
+ // document.body.removeChild()
+ // d3.select("svg").selectAll("rect").each(function(d,i){
+ ///   ColorData.push(this.style.fill);
+ //console.log(this);
+ 
+d3.xml("Bar_Category_Negative_1.svg", "image/svg+xml", function(xml) {
+  document.body.appendChild(xml.documentElement);
+ 
+
+//}); 
+
+d3.xml("Bar_Category_Negative_2.svg", "image/svg+xml", function(xml) {
+  document.body.appendChild(xml.documentElement);
+ 
+
+
+d3.xml("Bar_Divergent_Negative.svg", "image/svg+xml", function(xml) {
+  document.body.appendChild(xml.documentElement);
+ 
+
+//}); 
+
+d3.xml("Bar_Divergent_Negative_1.svg", "image/svg+xml", function(xml) {
+  document.body.appendChild(xml.documentElement);
+ 
+
+//}); 
+
+d3.xml("Bar_Divergent_Negative_2.svg", "image/svg+xml", function(xml) {
+  document.body.appendChild(xml.documentElement);
+ 
+
+//}); 
+
+d3.xml("Bar_Sequential_Negative.svg", "image/svg+xml", function(xml) {
+  document.body.appendChild(xml.documentElement);
+ 
+
+//}); 
+
+d3.xml("Bar_Sequential_Negative_1.svg", "image/svg+xml", function(xml) {
+  document.body.appendChild(xml.documentElement);
+ 
+
+//}); 
+
+d3.xml("Bar_Sequential_Negative_2.svg", "image/svg+xml", function(xml) {
+  document.body.appendChild(xml.documentElement);
+ 
+ //png();
+LoadPositive(); 
+//}); 
+});});});});});});});});
+
+});
+function LoadPositive(){
+ d3.xml("Bar_Category_Positive.svg", "image/svg+xml", function(xml) {
+  document.body.appendChild(xml.documentElement);
+ 
+d3.xml("Bar_Category_Positive_1.svg", "image/svg+xml", function(xml) {
+  document.body.appendChild(xml.documentElement);
+ 
+
+//}); 
+
+d3.xml("Bar_Category_Positive_2.svg", "image/svg+xml", function(xml) {
+  document.body.appendChild(xml.documentElement);
+ 
+
+//}); 
+
+d3.xml("Bar_Divergent_Positive.svg", "image/svg+xml", function(xml) {
+  document.body.appendChild(xml.documentElement);
+ 
+
+//}); 
+
+d3.xml("Bar_Divergent_Positive_1.svg", "image/svg+xml", function(xml) {
+  document.body.appendChild(xml.documentElement);
+ 
+
+//}); 
+
+d3.xml("Bar_Divergent_Positive_2.svg", "image/svg+xml", function(xml) {
+  document.body.appendChild(xml.documentElement);
+ 
+
+//}); 
+
+d3.xml("Bar_Sequential_Positive.svg", "image/svg+xml", function(xml) {
+  document.body.appendChild(xml.documentElement);
+ 
+
+//}); 
+
+d3.xml("Bar_Sequential_Positive_1.svg", "image/svg+xml", function(xml) {
+  document.body.appendChild(xml.documentElement);
+ 
+
+//}); 
+
+d3.xml("Bar_Sequential_Positive_2.svg", "image/svg+xml", function(xml) {
+  document.body.appendChild(xml.documentElement);
+//png(); 
+help();
+//}); 
+});
+});});});});});});});
+//}); 
+});
+}
+
+function png(){
+    
+    d3.selectAll("svg").each(function(d,i){
+        var image = new Image;
+        image.src = this;
+        saveSvgAsPng(this, "diagram.png");
+        
+    });
+         
+
+}
+
+function help(){
+   // d3.selectAll("svg").drag(move, start, up);
+    d3.selectAll("rect").each(function(d,i){
+   ColorData.push(this.style.fill);
+    });
+            
+  store=[];
+  jsonObj=[];
+ 
+for(i= 0; i < ColorData.length; i++){
+     HSLvalues={};
+    //console.log(ColorData.length);
+    var str="d3."+ColorData[i]+".hsl()";
+     store.push(eval(str));
+     //HSLvalues.push("H:"+store[i].h+":S:"+store[i].s+":L:"+store[i].l);
+     //console.log("H:"+store[i].h+":S:"+store[i].s+":L:"+store[i].l);
+     HSLvalues ["Hue"] = store[i].h;
+     HSLvalues ["Saturation"] = store[i].s;
+     HSLvalues ["Lightness"] = store[i].l;
+      jsonObj.push(HSLvalues);
+}
+    var json=JSON.parse(JSON.stringify(jsonObj));
+    var csv= JSON2CSV(json);
+    console.log(JSON.stringify(jsonObj));
+    blob = new Blob([csv], { type: 'text/csv' }); 
+    saveAs(blob, "data.csv");
+}
+//console.log(d3.rgb(123,23,145).hsl());
+
+    </script>
+  </body>
+</html>

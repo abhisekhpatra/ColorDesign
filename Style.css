@@ -1,0 +1,172 @@
+#svg2{
+           background:  #f8f8f8;
+           margin-left: .5em
+    }
+#svg1{
+           background:  #f8f8f8;
+           margin-right:  .5em
+    }
+
+
+.body {
+ padding: 20px;   
+}
+#colors1{
+         text-transform: uppercase;
+    }   
+    
+h2 {
+    font-weight: 300;
+}
+
+#steps-div, #steps-seq1, #steps-seq2 {
+    width: 6em;
+    text-align: right;
+}
+
+.colors {
+    width: 98%;
+}
+#colors1,#colors2{
+         text-transform: lowercase;
+    }   
+#colors-right { text-align: right; }
+svg {
+    margin: 10px 0;
+}
+
+svg path {
+    stroke: #000;
+    stroke-width: 2px;
+    fill: none;
+    shape-rendering: crispEdges;
+}
+
+
+#out {
+    margin-top: 0em;
+}
+
+div.gradient {
+    padding: 10px 10px 6px;
+    border-radius:4px;
+    background: Gainsboro;
+    text-align: center;
+}
+
+pre {
+    border: 0;
+    background: #f3f3f3;
+    color: #777;
+    padding: 10px;
+    background: Gainsboro;
+}
+
+div.gradient div {
+    display: inline-block;
+    height: 50px;
+    color: rgba(0,0,0,0);
+}
+#chart1,#chart2{
+   float: left; 
+  
+}
+#first,#second{
+   float: left; 
+
+}
+#leftcolumn, #rightcolumn {
+    border: 1px solid white;
+    float: left;
+    min-height:10px;
+    color: white;
+    margin-top: 0px;
+    
+   
+    
+}
+#leftcolumn {
+     width: 650px;
+      background: Gainsboro;
+      margin-left: 16px;
+}
+
+#rightcolumn {
+     width: 650px;
+      background: Gainsboro;
+    margin-left: 5px;  
+}
+#container {
+    padding-left: 1%;
+        
+}
+#container2 {
+   position: absolute;
+        
+}
+#save,#next,#list,#inst{
+    float: left;
+    position: absolute;
+    margin-top: 703px;
+}
+#inst{
+    margin-left: 0em;
+  
+   width:190px;
+    
+}
+#save {
+        
+   margin-left: 62em;
+   /* margin-top: 205px; */
+   width:190px;
+   
+        
+}
+#next {
+        
+   margin-left: 78em; 
+    
+    width:190px;
+        
+}
+
+#list {
+        
+   margin-left: 16em;
+  
+    
+   width:190px;
+        
+}
+#table {
+        
+  display:none; 
+  height: 500px;
+  width: 560px;
+        
+}
+#table1 {
+   
+  display: none; 
+   
+        
+}
+#container3{
+    height: 10px;
+}
+#task1,#task2{
+    float: left;
+    position: absolute;
+    padding-bottom: 4px;
+}
+
+#task1{
+    margin-left: 20em;
+   
+}
+
+#task2{
+    margin-left: 69em;
+    
+}
